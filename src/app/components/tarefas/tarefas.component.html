@@ -1,0 +1,12 @@
+<h1>Nova Tarefa</h1>
+
+<input type="text" [(ngModel)]="novaTarefa" placeholder="Digite uma nova tarefa" />
+<button (click)="adicionarTarefa()">Adicionar Tarefa</button>
+
+<h1>Lista de Tarefas</h1>
+<ul>
+    <li *ngFor="let tarefa of tarefas">
+        {{ tarefa }}
+    </li>
+</ul>
+

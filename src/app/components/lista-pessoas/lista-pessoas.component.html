@@ -1,0 +1,24 @@
+<h1>Pessoas</h1>
+
+<ul>
+    <li *ngFor="let pessoa of pessoas">
+        {{ pessoa.nome }}
+    </li>
+</ul>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Ativo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pessoa of pessoas">
+            <td>{{ pessoa.id }}</td>
+            <td>{{ pessoa.nome }}</td>
+            <td>{{ pessoa.ativo ? 'Sim' : 'Não' }}</td>
+        </tr>
+    </tbody>
+</table>

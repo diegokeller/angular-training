@@ -19,9 +19,10 @@ export class BemVindoComponent implements OnInit {
   ngOnInit(): void {
     console.log('Init');
     console.log(this.olaService.ola());
-    this.todoService.getTodoById(3).subscribe(todos => {
-      console.log('Todos:', todos);
+    this.todoService.getTodoById(3).subscribe(todo => {
+      console.log('Buscou a tarefa:', todo.title);
     });
+    console.log('Fim do Init');
   }
 
 }

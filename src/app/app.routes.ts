@@ -30,5 +30,20 @@ export const routes: Routes = [
         path: 'bem-vindo',
         loadComponent: () => import('./components/bem-vindo/bem-vindo.component')
         .then(m => m.BemVindoComponent)
+    },
+    {
+        path: 'posts',
+        loadComponent: () => import('./components/posts/posts.component')
+        .then(m => m.PostsComponent)
+    },
+    {
+        path: 'albums',
+        loadComponent: () => import('./components/albums/albums.component')
+        .then(m => m.AlbumsComponent)
+    },
+    {
+        path: 'album/:id',
+        loadComponent: () => import('./components/album/album.component')
+        .then(m => m.AlbumComponent)
     }
 ];

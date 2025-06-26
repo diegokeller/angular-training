@@ -45,5 +45,10 @@ export const routes: Routes = [
         path: 'album/:id',
         loadComponent: () => import('./components/album/album.component')
         .then(m => m.AlbumComponent)
+    },
+    {
+        path: 'post/:id',
+        loadComponent: () => import('./components/post/post.component')
+        .then(m => m.PostComponent)
     }
 ];

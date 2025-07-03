@@ -1,3 +1,9 @@
-<p>post works!</p>
+<h1>{{post?.title}}</h1>
+<p>{{post?.body}}</p>
 
-{{post?.id}}
+<h2>Comentários</h2>
+<div *ngFor="let comment of comments">
+    {{comment.name}} ({{comment.email}})
+    <p>{{comment.body}}</p>
+    <hr>
+</div>

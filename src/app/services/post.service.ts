@@ -8,6 +8,14 @@ export interface Post {
   body: string;
 }
 
+export interface Comment {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,5 +31,9 @@ export class PostService {
 
   getPostById(id: string | null) {
     return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  }
+
+  getCommentsByPostId(postId: string | null) {
+    return this.http.get<Comment[]>(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
   }
 }

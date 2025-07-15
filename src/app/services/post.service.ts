@@ -29,11 +29,11 @@ export class PostService {
     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
   }
 
-  getPostById(id: string | null) {
+  getPostById(id: number) {
     return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
   }
 
-  getCommentsByPostId(postId: string | null) {
+  getCommentsByPostId(postId: number) {
     return this.http.get<Comment[]>(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
   }
 }

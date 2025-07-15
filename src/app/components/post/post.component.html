@@ -2,6 +2,23 @@
 <p>{{post?.body}}</p>
 
 <h2>Comentários</h2>
+
+<fieldset style="width: 300px; margin-bottom: 20px;">
+    <legend>Adicionar comentário</legend>
+    <form style="display: flex; flex-direction: column; gap: 5px;">
+        <label for="name">Nome:</label>
+        <input name="name" type="text" [(ngModel)]="newComment.name" required>
+
+        <label for="email">Email:</label>
+        e<input name="email" type="email" [(ngModel)]="newComment.email" required>
+
+        <label for="body">Comentário:</label>
+        <textarea name="body"  [(ngModel)]="newComment.body" required></textarea>
+
+        <button type="submit" (click)="addComment()">Enviar</button>
+    </form>
+</fieldset>
+
 <div *ngFor="let comment of comments">
     {{comment.name}} ({{comment.email}})
     <p>{{comment.body}}</p>

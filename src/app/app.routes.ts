@@ -50,5 +50,10 @@ export const routes: Routes = [
         path: 'post/:id',
         loadComponent: () => import('./components/post/post.component')
         .then(m => m.PostComponent)
-    }
+    },
+    {
+      path: 'carro',
+      loadComponent: () => import('./components/carro/carro.component')
+        .then(m => m.CarroComponent)
+    },
 ];

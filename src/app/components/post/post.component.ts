@@ -3,10 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Post, PostService, Comment } from '../../services/post.service';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {AddCommentComponent} from '../add-comment/add-comment.component';
 
 @Component({
   selector: 'app-post',
-  imports: [NgFor, FormsModule, NgIf],
+  imports: [NgFor, FormsModule, NgIf, AddCommentComponent],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })
@@ -14,7 +15,6 @@ export class PostComponent implements OnInit {
 
   post?: Post;
   comments: Comment[] = [];
-  newComment: Comment = {} as Comment;
   postId?: number;
   isLoading = false;
 
@@ -47,10 +47,9 @@ export class PostComponent implements OnInit {
     });
   }
 
-  addComment(): void {
-    console.log('Adding comment...', this.newComment);
-    this.comments.unshift(this.newComment);
-    this.newComment = {} as Comment;
+  addComment(newComment: Comment): void {
+    console.log('Adicionando comentário...', newComment);
+    this.comments.unshift(newComment);
   }
 
   nextPost(): void {
